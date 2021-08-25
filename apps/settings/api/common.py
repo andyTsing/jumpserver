@@ -150,6 +150,7 @@ class SettingsApi(generics.RetrieveUpdateAPIView):
         'wecom': serializers.WeComSettingSerializer,
         'dingtalk': serializers.DingTalkSettingSerializer,
         'feishu': serializers.FeiShuSettingSerializer,
+        'sms': serializers.SMSSettingSerializer,
     }
 
     def get_serializer_class(self):

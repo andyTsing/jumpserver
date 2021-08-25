@@ -232,6 +232,11 @@ class Config(dict):
         'FEISHU_APP_ID': '',
         'FEISHU_APP_SECRET': '',
 
+        'AUTH_SMS': False,
+
+        'ALIBABA_ACCESS_KEY_ID': '',
+        'ALIBABA_ACCESS_KEY_SECRET': '',
+
         'OTP_VALID_WINDOW': 2,
         'OTP_ISSUER_NAME': 'JumpServer',
         'EMAIL_SUFFIX': 'jumpserver.org',
