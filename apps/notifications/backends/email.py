@@ -12,3 +12,6 @@ class Email(BackendBase):
         from_email = settings.EMAIL_FROM or settings.EMAIL_HOST_USER
         accounts, __, __ = self.get_accounts(users)
         send_mail(subject, message, from_email, accounts, html_message=message)
+
+
+backend = Email

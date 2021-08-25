@@ -17,3 +17,6 @@ class DingTalk(BackendBase):
     def send_msg(self, users, message, subject=None):
         accounts, __, __ = self.get_accounts(users)
         return self.dingtalk.send_text(accounts, message)
+
+
+backend = DingTalk

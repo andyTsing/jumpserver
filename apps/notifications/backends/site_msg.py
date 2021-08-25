@@ -12,3 +12,6 @@ class SiteMessage(BackendBase):
     @classmethod
     def is_enable(cls):
         return True
+
+
+backend = SiteMessage
