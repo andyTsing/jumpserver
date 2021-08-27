@@ -311,10 +311,10 @@ class AuthMixin:
             raise errors.MFAUnsetError(user, self.request, url)
         raise errors.MFARequiredError()
 
-    def mark_mfa_ok(self):
+    def mark_mfa_ok(self, mfa_type='otp'):
         self.request.session['auth_mfa'] = 1
         self.request.session['auth_mfa_time'] = time.time()
-        self.request.session['auth_mfa_type'] = 'otp'
+        self.request.session['auth_mfa_type'] = mfa_type
 
     def check_mfa_is_block(self, username, ip, raise_exception=True):
         if MFABlockUtils(username, ip).is_block():
