@@ -60,7 +60,11 @@ class SimpleMetadataWithFilters(SimpleMetadata):
         of metadata about it.
         """
         field_info = OrderedDict()
-        field_info['type'] = self.label_lookup[field]
+        if isinstance(field, serializers.JSONField):
+            tp = 'json'
+        else:
+            tp = self.label_lookup[field]
+        field_info['type'] = tp
         field_info['required'] = getattr(field, 'required', False)
 
         default = getattr(field, 'default', None)
